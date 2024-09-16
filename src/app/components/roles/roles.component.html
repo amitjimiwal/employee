@@ -1,0 +1,39 @@
+<p>roles works!</p>
+<!-- Data Binding - accessing the variables and data types created in the component , you can access only the variables present in that component.ts file -->
+<!-- Interpolation - {{}} (Accessing the variable) -->
+<h1 class="text-3xl font-bold underline text-green-400">Hello Roles World</h1>
+<p>{{ firstName }}</p>
+<p>{{ versionString }}: {{ angularVersion }}</p>
+<h1>{{ currantDate.toDateString() }}</h1>
+
+<!-- Property Binding = Binding an html attributes value of an tag with the variables declared -->
+
+<input
+  type="text"
+  [value]="firstName"
+  placeholder="firstName"
+  [(ngModel)]="firstName"
+/>
+<input [type]="inputType" />
+<br />
+
+<!-- Two-way Data Binding = on changing a data in one place will automatically change it in all the other places -->
+<p>Your Selected state is {{ selectedState }}</p>
+<select
+  [(ngModel)]="selectedState"
+  class="text-black bg-gray-400"
+  aria-placeholder="Select state"
+>
+  <option selected disabled>select state</option>
+  <option>GOA</option>
+  <option>DELHI</option>
+  <option>MUMBAI</option>
+</select>
+
+<!-- Function Binding -->
+<button type="button" (click)="showWelcomeMessage()">
+  Click for normal Alert
+</button>
+<button type="button" (click)="showWelcomeMessageWithParameter(firstName)">
+  Click for named Alert
+</button>
