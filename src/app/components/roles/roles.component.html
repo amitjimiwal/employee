@@ -1,24 +1,23 @@
-<p>roles works!</p>
 <!-- Data Binding - accessing the variables and data types created in the component , you can access only the variables present in that component.ts file -->
 <!-- Interpolation - {{}} (Accessing the variable) -->
-<h1 class="text-3xl font-bold underline text-green-400">Hello Roles World</h1>
+<!-- <h1 class="text-3xl font-bold underline text-green-400">Hello Roles World</h1>
 <p>{{ firstName }}</p>
 <p>{{ versionString }}: {{ angularVersion }}</p>
-<h1>{{ currantDate.toDateString() }}</h1>
+<h1>{{ currantDate.toDateString() }}</h1> -->
 
 <!-- Property Binding = Binding an html attributes value of an tag with the variables declared -->
 
-<input
+<!-- <input
   type="text"
   [value]="firstName"
   placeholder="firstName"
   [(ngModel)]="firstName"
 />
 <input [type]="inputType" />
-<br />
+<br /> -->
 
 <!-- Two-way Data Binding = on changing a data in one place will automatically change it in all the other places -->
-<p>Your Selected state is {{ selectedState }}</p>
+<!-- <p>Your Selected state is {{ selectedState }}</p>
 <select
   [(ngModel)]="selectedState"
   class="text-black bg-gray-400"
@@ -28,12 +27,27 @@
   <option>GOA</option>
   <option>DELHI</option>
   <option>MUMBAI</option>
-</select>
+</select> -->
 
 <!-- Function Binding -->
-<button type="button" (click)="showWelcomeMessage()">
+<!-- <button type="button" (click)="showWelcomeMessage()">
   Click for normal Alert
 </button>
 <button type="button" (click)="showWelcomeMessageWithParameter(firstName)">
-  Click for named Alert
-</button>
+  Click for named
+</button> -->
+<div
+  class="max-w-md mx-auto mt-8 bg-white overflow-hidden md:max-w-2xl"
+>
+  <div class="p-8">
+    <ul class="space-y-3">
+      <li
+        *ngFor="let role of roles"
+        [ngClass]="role.color"
+        class="text-white p-3 rounded-lg shadow-sm transition duration-300 ease-in-out transform hover:scale-105"
+      >
+        <span class="font-semibold">{{ role.role }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
